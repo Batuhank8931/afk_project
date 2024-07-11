@@ -1,0 +1,928 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">    
+
+        <!-- Style CSS -->
+         <link rel="stylesheet" href="css/style.css">
+         <link rel="stylesheet" href="css/navbars.css">
+         
+    <title>AFK MOTORS</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md  bg-warning p-4 " >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">AFK MOTORS</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0 ">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  " href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">Link</a>
+              </li>
+           
+            </ul>
+            
+           <a href="./login.html"> <button class="btn btn-success mx-3" type="submit">Login</button></a>   
+            
+                       
+           <a href="./register.html"> <button class="btn btn-primary btn-xl" type="submit">Sign-Up</button> </a>
+       
+            
+          </div>
+        </div>
+      </nav>
+
+
+<div name="main " class="row container mx-auto " >    
+  
+  
+
+<div class="col-10 col-md-2 mx-auto">
+
+</div>
+
+    
+
+
+
+
+<div class="col-10 col-md-10 mx-auto">
+
+  <div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs" id="form-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="bilgiler-tab" data-bs-toggle="tab" href="#bilgiler" role="tab" aria-controls="bilgiler" aria-selected="true">Bireysel Başvuru</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="tuzelForm-tab" data-bs-toggle="tab" href="#tuzelform" role="tab" aria-controls="tuzelform" aria-selected="false">Tüzel Başvuru</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <div class="tab-content" id="form-tabs-content">
+                <div class="tab-pane fade show active" id="bilgiler" role="tabpanel" aria-labelledby="bilgiler-tab">
+                    
+                  <div class="accordion" id="bireyselForm">
+        
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#kisisel" aria-expanded="true" aria-controls="kisisel">
+                            Kişisel Bilgiler
+                          </button>
+                        </h2>
+                        <div id="kisisel" class="accordion-collapse collapse show" data-bs-parent="#bireyselForm">
+                          <div class="accordion-body">
+              
+                            <form>
+                              <div class="mb-3">
+                                  <label for="cinsiyet" class="form-label">Cinsiyet <span class="text-danger">*</span></label>
+                                  <div>
+                                      <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="cinsiyet" id="cinsiyet-erkek" value="Erkek" required>
+                                          <label class="form-check-label" for="cinsiyet-erkek">Erkek</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="cinsiyet" id="cinsiyet-kadin" value="Kadın" required>
+                                          <label class="form-check-label" for="cinsiyet-kadin">Kadın</label>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="tc-kimlik-no" class="form-label">TC Kimlik No <span class="text-danger">*</span></label>
+                                  <input type="text" class="form-control" id="tc-kimlik-no" required>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="ad" class="form-label">Ad <span class="text-danger">*</span></label>
+                                  <input type="text" class="form-control" id="ad" required>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="soyad" class="form-label">Soyad <span class="text-danger">*</span></label>
+                                  <input type="text" class="form-control" id="soyad" required>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="medeni-durum" class="form-label">Medeni Durum <span class="text-danger">*</span></label>
+                                  <div>
+                                      <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="medeni-durum" id="medeni-durum-evli" value="Evli" required>
+                                          <label class="form-check-label" for="medeni-durum-evli">Evli</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="medeni-durum" id="medeni-durum-bekar" value="Bekar" required>
+                                          <label class="form-check-label" for="medeni-durum-bekar">Bekar</label>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="ev-adresi" class="form-label">Ev Adresi <span class="text-danger">*</span></label>
+                                  <input type="text" class="form-control" id="ev-adresi" required>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="sehir" class="form-label">Şehir <span class="text-danger">*</span></label>
+                                  <select class="form-select" id="sehir" required>
+                                      <option selected disabled value="">Seçin...</option>
+                                      <option>İstanbul</option>
+                                      <option>Ankara</option>
+                                      <option>İzmir</option>
+                                      <!-- Diğer şehir seçenekleri buraya eklenebilir -->
+                                  </select>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="semt" class="form-label">Semt <span class="text-danger">*</span></label>
+                                  <select class="form-select" id="semt" required>
+                                      <option selected disabled value="">Seçin...</option>
+                                      <!-- Semt seçenekleri buraya eklenebilir -->
+                                  </select>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="cep-telefonu" class="form-label">Cep Telefonu <span class="text-danger">*</span></label>
+                                  <input type="text" class="form-control" id="cep-telefonu" required>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                                  <input type="email" class="form-control" id="email" required>
+                              </div>
+                              <button type="submit" class="btn btn-primary">İleri</button>
+                          </form>
+                          
+                          </div>
+                        </div>
+                      </div>
+              
+              
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#calisma" aria-expanded="false" aria-controls="calisma">
+                            Çalışma Bilgileri
+                          </button>
+                        </h2>
+                        <div id="calisma" class="accordion-collapse collapse" data-bs-parent="#bireyselForm">
+                          <div class="accordion-body">
+                            <form>
+                              <div class="mb-3">
+                                  <label for="calisma-sekli" class="form-label">Çalışma Şekli <span class="text-danger">*</span></label>
+                                  <select class="form-select" id="calisma-sekli" required>
+                                      <option selected disabled value="">Seçin...</option>
+                                      <option>Full-time</option>
+                                      <option>Part-time</option>
+                                      <option>Serbest</option>
+                                      <!-- Diğer çalışma şekilleri buraya eklenebilir -->
+                                  </select>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="aylik-gelir" class="form-label">Aylık Gelir <span class="text-danger">*</span></label>
+                                  <div class="input-group">
+                                      <span class="input-group-text">₺</span>
+                                      <input type="number" class="form-control" id="aylik-gelir" placeholder="0" required>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="ek-gelir" class="form-label">Ek Gelir</label>
+                                  <div class="input-group">
+                                      <span class="input-group-text">₺</span>
+                                      <input type="number" class="form-control" id="ek-gelir" placeholder="0">
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="ek-gelir-aciklamasi" class="form-label">Ek Gelir Açıklaması</label>
+                                  <input type="text" class="form-control" id="ek-gelir-aciklamasi">
+                              </div>
+                              <div class="mb-3">
+                                  <label for="sigorta-turu" class="form-label">Sigorta Türü <span class="text-danger">*</span></label>
+                                  <select class="form-select" id="sigorta-turu" required>
+                                      <option selected disabled value="">Seçin...</option>
+                                      <option>SGK</option>
+                                      <option>Bağ-Kur</option>
+                                      <option>Emekli Sandığı</option>
+                                      <!-- Diğer sigorta türleri buraya eklenebilir -->
+                                  </select>
+                              </div>
+                              <div class="d-flex justify-content-between">
+                                  <button type="button" class="btn btn-secondary">Geri</button>
+                                  <button type="submit" class="btn btn-primary">İleri</button>
+                              </div>
+                          </form>
+              
+                          
+                          </div>
+                        </div>
+                      </div>
+              
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#arac" aria-expanded="false" aria-controls="arac">
+                            Araç Bilgileri
+                          </button>
+                        </h2>
+                        <div id="arac" class="accordion-collapse collapse" data-bs-parent="#bireyselForm">
+                          <div class="accordion-body">
+                           
+                            <form>
+                              <div class="mb-3">
+                                  <label for="model-yili" class="form-label">Model Yılı</label>
+                                  <select class="form-select" id="model-yili">
+                                      <option selected disabled value="">Seçin...</option>
+                                      <option value="1989">1989</option>
+                                      <option value="1990">1990</option>
+                                      <option value="1991">1991</option>
+                                      <option value="1992">1992</option>
+                                      <option value="1993">1993</option>
+                                      <option value="1994">1994</option>
+                                      <option value="1995">1995</option>
+                                      <option value="1996">1996</option>
+                                      <option value="1997">1997</option>
+                                      <option value="1998">1998</option>
+                                      <option value="1999">1999</option>
+                                      <option value="2000">2000</option>
+                                      <option value="2001">2001</option>
+                                      <option value="2002">2002</option>
+                                      <option value="2003">2003</option>
+                                      <option value="2004">2004</option>
+                                      <option value="2005">2005</option>
+                                      <option value="2006">2006</option>
+                                      <option value="2007">2007</option>
+                                      <option value="2008">2008</option>
+                                      <option value="2009">2009</option>
+                                      <option value="2010">2010</option>
+                                      <option value="2011">2011</option>
+                                      <option value="2012">2012</option>
+                                      <option value="2013">2013</option>
+                                      <option value="2014">2014</option>
+                                      <option value="2015">2015</option>
+                                      <option value="2016">2016</option>
+                                      <option value="2017">2017</option>
+                                      <option value="2018">2018</option>
+                                      <option value="2019">2019</option>
+                                      <option value="2020">2020</option>
+                                      <option value="2021">2021</option>
+                                      <option value="2022">2022</option>
+                                      <option value="2023">2023</option>
+                                      <option value="2024">2024</option>
+                                      
+                                      <!-- Model yılı seçenekleri buraya eklenebilir -->
+                                  </select>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="marka" class="form-label">Marka</label>
+                                  <select class="form-select" id="marka">
+                                      <option selected disabled value="">Seçin...</option>
+                                      
+                                      <option value="Toyota">Toyota</option>
+                                      <option value="Honda">Honda</option>
+                                      <option value="Ford">Ford</option>
+                                      <option value="Chevrolet">Chevrolet</option>
+                                      <option value="Nissan">Nissan</option>
+                                      <option value="BMW">BMW</option>
+                                      <option value="Mercedes-Benz">Mercedes-Benz</option>
+                                      <option value="Volkswagen">Volkswagen</option>
+                                      <option value="Audi">Audi</option>
+                                      <option value="Hyundai">Hyundai</option>
+                                      <option value="Kia">Kia</option>
+                                      <option value="Mazda">Mazda</option>
+                                      <option value="Subaru">Subaru</option>
+                                      <option value="Lexus">Lexus</option>
+                                      <option value="Dodge">Dodge</option>
+                                      <option value="Jeep">Jeep</option>
+                                      <option value="Tesla">Tesla</option>
+                                      <option value="Volvo">Volvo</option>
+                                      <option value="Land Rover">Land Rover</option>
+                                      <option value="Porsche">Porsche</option>
+
+                                  </select>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="arac-tipi" class="form-label">Araç Tipi</label>
+                                  <select class="form-select" id="arac-tipi">
+                                      <option selected disabled value="">Seçin...</option>
+                                      
+                                      <option value="Sedan">Sedan</option>
+                                      <option value="Hatchback">Hatchback</option>
+                                      <option value="SUV">SUV</option>
+                                      <option value="Coupe">Coupe</option>
+                                      <option value="Convertible">Convertible</option>
+                                      <option value="Wagon">Wagon</option>
+                                      <option value="Pickup">Pickup</option>
+                                      <option value="Van">Van</option>
+                                      <option value="Minivan">Minivan</option>
+                                      <option value="Crossover">Crossover</option>
+                                      <option value="Diesel">Diesel</option>
+                                      <option value="Electric">Electric</option>
+                                      <option value="Hybrid">Hybrid</option>
+                                      <option value="Luxury">Luxury</option>
+                                      <option value="Sports Car">Sports Car</option>
+                                      <option value="Off-Road">Off-Road</option>
+                                      <option value="Compact">Compact</option>
+                                      <option value="Subcompact">Subcompact</option>
+                                      <option value="Roadster">Roadster</option>
+                                      <option value="Station Wagon">Station Wagon</option>
+
+                                  </select>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="secilen-arac" class="form-label">Seçilen Araç <span class="text-danger">*</span></label>
+                                  <input type="text" class="form-control" id="secilen-arac" required>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="kasko-kodu" class="form-label">Kasko Kodu</label>
+                                  <input type="text" class="form-control" id="kasko-kodu">
+                              </div>
+                              <div class="mb-3">
+                                  <label for="kasko-degeri" class="form-label">Kasko Değeri</label>
+                                  <div class="input-group">
+                                      <span class="input-group-text">₺</span>
+                                      <input type="number" class="form-control" id="kasko-degeri" placeholder="0">
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="noter-satis-bedeli" class="form-label">Noter Satış Bedeli <span class="text-danger">*</span></label>
+                                  <div class="input-group">
+                                      <span class="input-group-text">₺</span>
+                                      <input type="number" class="form-control" id="noter-satis-bedeli" placeholder="0" required>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label class="form-label">Konsinye Araç mı?</label>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="konsinye-arac">
+                                      <label class="form-check-label" for="konsinye-arac">Hayır</label>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label class="form-label">Ruhsat Sahibi Şirket mi?</label>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="ruhsat-sahibi-sirket">
+                                      <label class="form-check-label" for="ruhsat-sahibi-sirket">Hayır</label>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="plaka" class="form-label">Plaka <span class="text-danger">*</span></label>
+                                  <input type="text" class="form-control" id="plaka" required>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="kilometre" class="form-label">Kilometre <span class="text-danger">*</span></label>
+                                  <input type="number" class="form-control" id="kilometre" required>
+                              </div>
+                              <div class="d-flex justify-content-between">
+                                  <button type="button" class="btn btn-secondary">Geri</button>
+                                  <button type="submit" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#kredi" aria-expanded="false" aria-controls="kredi">İleri</button>
+                              </div>
+                          </form>
+                          
+                          
+                          </div>
+                        </div>
+                      </div>
+
+
+              
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#kredi" aria-expanded="false" aria-controls="kredi">
+                            Kredi Bilgileri
+                          </button>
+                        </h2>
+                        <div id="kredi" class="accordion-collapse collapse" data-bs-parent="#bireyselForm">
+                          <div class="accordion-body">
+                            <form>
+                              <div class="mb-3">
+                                  <label for="kredi-tutari" class="form-label">Kredi Tutarı <span class="text-danger">*</span></label>
+                                  <div class="input-group">
+                                      <span class="input-group-text">₺</span>
+                                      <input type="number" class="form-control" id="kredi-tutari" placeholder="20000" required>
+                                  </div>
+                                  <small class="form-text text-muted">Yirmi Bin Türk Lirası</small>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="kredi-vadesi" class="form-label">Kredi Vadesi <span class="text-danger">*</span></label>
+                                  <select class="form-select" id="kredi-vadesi" required>
+                                      <option selected disabled value="">Seçin...</option>
+                                      <option>6 ay</option>
+                                      <option>12 ay</option>
+                                      <option>24 ay</option>
+                                      <option>36 ay</option>
+                                      <!-- Diğer vade seçenekleri buraya eklenebilir -->
+                                  </select>
+                              </div>
+                              <div class="mb-3">
+                                  <label class="form-label">Başvurmak istediğiniz banka ve finans kurumlarını seçiniz.</label>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="tum-bankalar" checked>
+                                      <label class="form-check-label" for="tum-bankalar">Tümü</label>
+                                  </div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="aktifbank" checked>
+                                      <label class="form-check-label" for="aktifbank">AKTİFBANK</label>
+                                  </div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="turkiye-finans" checked>
+                                      <label class="form-check-label" for="turkiye-finans">TÜRKİYE FİNANS KATILIM</label>
+                                  </div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="alj-finans" checked>
+                                      <label class="form-check-label" for="alj-finans">ALJ FİNANS</label>
+                                  </div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="akbank" checked>
+                                      <label class="form-check-label" for="akbank">AKBANK</label>
+                                  </div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="volkswagen-finans" checked>
+                                      <label class="form-check-label" for="volkswagen-finans">VOLKSWAGEN DOĞUŞ FİNANS</label>
+                                  </div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="koc-finans" checked>
+                                      <label class="form-check-label" for="koc-finans">KOÇFİNANS</label>
+                                  </div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="yapi-kredi" checked>
+                                      <label class="form-check-label" for="yapi-kredi">YAPI KREDİ</label>
+                                  </div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="quick-finans" checked>
+                                      <label class="form-check-label" for="quick-finans">QUICK FİNANS</label>
+                                  </div>
+                              </div>
+                              <div class="d-flex justify-content-between">
+                                  <button type="button" class="btn btn-secondary">Geri</button>
+                                  <button type="submit" class="btn btn-primary">İleri</button>
+                              </div>
+                          </form>
+                          </div>
+                        </div>
+                      </div>
+              
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#evraklar" aria-expanded="false" aria-controls="evraklar">
+                           Evraklar
+                          </button>
+                        </h2>
+                        <div id="evraklar" class="accordion-collapse collapse" data-bs-parent="#bireyselForm">
+                          <div class="accordion-body">
+                           
+                            <form>
+                              <div class="mb-3">
+                                  <label for="ruhsat" class="form-label">Ruhsat <span class="text-danger">*</span></label>
+                                  <div class="input-group">
+                                      <input type="file" class="form-control" id="ruhsat" required>
+                                      <label class="input-group-text" for="ruhsat">dosya yok</label>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="imza-sirkusu" class="form-label">İmza Sirküsü <span class="text-danger">*</span></label>
+                                  <div class="input-group">
+                                      <input type="file" class="form-control" id="imza-sirkusu" required>
+                                      <label class="input-group-text" for="imza-sirkusu">dosya yok</label>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="faaliyet-belgesi" class="form-label">Faaliyet Belgesi <span class="text-danger">*</span> <small class="form-text text-muted">(güncel hali)</small></label>
+                                  <div class="input-group">
+                                      <input type="file" class="form-control" id="faaliyet-belgesi" required>
+                                      <label class="input-group-text" for="faaliyet-belgesi">dosya yok</label>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="sicil-gazetesi" class="form-label">Sicil Gazetesi <span class="text-danger">*</span></label>
+                                  <div class="input-group">
+                                      <input type="file" class="form-control" id="sicil-gazetesi" required>
+                                      <label class="input-group-text" for="sicil-gazetesi">dosya yok</label>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="kimlikler" class="form-label">Kimlik(ler) <span class="text-danger">*</span> <small class="form-text text-muted">(şirket yetkililerine ait)</small></label>
+                                  <div class="input-group">
+                                      <input type="file" class="form-control" id="kimlikler" required>
+                                      <label class="input-group-text" for="kimlikler">dosya yok</label>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="mali-evraklar" class="form-label">Mâli Evraklar <span class="text-danger">*</span> <small class="form-text text-muted">(son 2 yıla ait)</small></label>
+                                  <div class="input-group">
+                                      <input type="file" class="form-control" id="mali-evraklar" required>
+                                      <label class="input-group-text" for="mali-evraklar">dosya yok</label>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="vergi-levhasi" class="form-label">Vargi Levhası <span class="text-danger">*</span> <small class="form-text text-muted"></small></label>
+                                  <div class="input-group">
+                                      <input type="file" class="form-control" id="vergi-levhasi" required>
+                                      <label class="input-group-text" for="vergi-levhasi">dosya yok</label>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="kimlik-on" class="form-label">Ruhsat Sahibi Kimlik Ön Yüz <span class="text-danger">*</span> <small class="form-text text-muted"></small></label>
+                                  <div class="input-group">
+                                      <input type="file" class="form-control" id="kimlik-on" required>
+                                      <label class="input-group-text" for="kimlik-on">dosya yok</label>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="kimlik-arka" class="form-label">Ruhsat Sahibi Kimlik Arka Yüz <span class="text-danger">*</span> <small class="form-text text-muted"></small></label>
+                                  <div class="input-group">
+                                      <input type="file" class="form-control" id="kimlik-arka" required>
+                                      <label class="input-group-text" for="kimlik-arka">dosya yok</label>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="diger" class="form-label">Diğer <small class="form-text text-muted">(Diğer Dosyalar)</small></label>
+                                  <div class="input-group">
+                                      <input type="file" class="form-control" id="diger" required>
+                                      <label class="input-group-text" for="diger">dosya yok</label>
+                                  </div>
+                              </div>
+                              <div class="d-flex justify-content-between">
+                                  <button type="button" class="btn btn-secondary">Geri</button>
+                                  <button type="submit" class="btn btn-primary">İleri</button>
+                              </div>
+                          </form>
+                         
+                          </div>
+                        </div>
+                      </div>
+              
+                    </div>
+                    
+                  </div>
+
+                </div>
+
+
+                <!-- TÜZEL FORM  -->
+
+                <div class="tab-pane fade" id="tuzelform" role="tabpanel" aria-labelledby="tuzelform-tab">
+
+                  <div class="accordion" id="tuzelForm">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#firmabilgileri" aria-expanded="false" aria-controls="kisisel">
+                          Firma Bilgileri
+                        </button>
+                      </h2>
+                      <div id="firmabilgileri" class="accordion-collapse collapse show" data-bs-parent="#tuzelform">
+                        <div class="accordion-body">
+            
+                          <form>
+                            
+                            <div class="mb-3">
+                                <label for="vergi-no" class="form-label">Vergi No <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="vergi-no" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="sirket-unvan" class="form-label">Şirket Ünvanı <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="sirket-unvan" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="faaliyet-konusu" class="form-label">Faaliyet Konusu <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="faaliyet-konus" required>
+                            </div>                          
+                            <div class="mb-3">
+                                <label for="ev-adresi" class="form-label">Ev Adresi <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="ev-adresi" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="sehir" class="form-label">Şehir <span class="text-danger">*</span></label>
+                                <select class="form-select" id="sehir" required>
+                                    <option selected disabled value="">Seçin...</option>
+                                    <option>İstanbul</option>
+                                    <option>Ankara</option>
+                                    <option>İzmir</option>
+                                    <!-- Diğer şehir seçenekleri buraya -->
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="semt" class="form-label">Semt <span class="text-danger">*</span></label>
+                                <select class="form-select" id="semt" required>
+                                    <option selected disabled value="">Seçin...</option>
+                                    <!-- Semt seçenekleri buraya -->
+                                </select>
+                            </div>                           
+                            <button type="submit" class="btn btn-primary" data-bs-target="#tuzelform">İleri</button>
+                        </form>
+                        
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tuzelarac" aria-expanded="false" aria-controls="tuzelarac">
+                          Araç Bilgileri
+                        </button>
+                      </h2>
+                      <div id="tuzelarac" class="accordion-collapse collapse" data-bs-parent="#tuzelform">
+                        <div class="accordion-body">
+                         
+                          <form>
+                            <div class="mb-3">
+                                <label for="model-yili" class="form-label">Model Yılı</label>
+                                <select class="form-select" id="model-yili">
+                                    <option selected disabled value="">Seçin...</option>
+                                    <!-- Model yılı seçenekleri buraya eklenebilir -->
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="marka" class="form-label">Marka</label>
+                                <select class="form-select" id="marka">
+                                    <option selected disabled value="">Seçin...</option>
+                                    <!-- Marka seçenekleri buraya eklenebilir -->
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="arac-tipi" class="form-label">Araç Tipi</label>
+                                <select class="form-select" id="arac-tipi">
+                                    <option selected disabled value="">Seçin...</option>
+                                    <!-- Araç tipi seçenekleri buraya eklenebilir -->
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="secilen-arac" class="form-label">Seçilen Araç <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="secilen-arac" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="kasko-kodu" class="form-label">Kasko Kodu</label>
+                                <input type="text" class="form-control" id="kasko-kodu">
+                            </div>
+                            <div class="mb-3">
+                                <label for="kasko-degeri" class="form-label">Kasko Değeri</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">₺</span>
+                                    <input type="number" class="form-control" id="kasko-degeri" placeholder="0">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="noter-satis-bedeli" class="form-label">Noter Satış Bedeli <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text">₺</span>
+                                    <input type="number" class="form-control" id="noter-satis-bedeli" placeholder="0" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Konsinye Araç mı?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="konsinye-arac">
+                                    <label class="form-check-label" for="konsinye-arac">Hayır</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Ruhsat Sahibi Şirket mi?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="ruhsat-sahibi-sirket">
+                                    <label class="form-check-label" for="ruhsat-sahibi-sirket">Hayır</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="plaka" class="form-label">Plaka <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="plaka" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="kilometre" class="form-label">Kilometre <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="kilometre" required>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-secondary">Geri</button>
+                                <button type="submit" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#kredi" aria-expanded="false" aria-controls="kredi">İleri</button>
+                            </div>
+                        </form>
+                        
+                        
+                        
+                        
+                        
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+
+            
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tuzelkredi" aria-expanded="false" aria-controls="tuzelkredi">
+                          Kredi Bilgileri
+                        </button>
+                      </h2>
+                      <div id="tuzelkredi" class="accordion-collapse collapse" data-bs-parent="#tuzelform">
+                        <div class="accordion-body">
+                          <form>
+                            <div class="mb-3">
+                                <label for="kredi-tutari" class="form-label">Kredi Tutarı <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text">₺</span>
+                                    <input type="number" class="form-control" id="-tutari" placeholder="20000" required>
+                                </div>kredi
+                                <small class="form-text text-muted">Yirmi Bin Türk Lirası</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="kredi-vadesi" class="form-label">Kredi Vadesi <span class="text-danger">*</span></label>
+                                <select class="form-select" id="kredi-vadesi" required>
+                                    <option selected disabled value="">Seçin...</option>
+                                    <option>6 ay</option>
+                                    <option>12 ay</option>
+                                    <option>24 ay</option>
+                                    <option>36 ay</option>
+                                    <!-- Diğer vade seçenekleri buraya eklenebilir -->
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Başvurmak istediğiniz banka ve finans kurumlarını seçiniz.</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="tum-bankalar" checked>
+                                    <label class="form-check-label" for="tum-bankalar">Tümü</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="aktifbank" checked>
+                                    <label class="form-check-label" for="aktifbank">AKTİFBANK</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="turkiye-finans" checked>
+                                    <label class="form-check-label" for="turkiye-finans">TÜRKİYE FİNANS KATILIM</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="alj-finans" checked>
+                                    <label class="form-check-label" for="alj-finans">ALJ FİNANS</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="akbank" checked>
+                                    <label class="form-check-label" for="akbank">AKBANK</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="volkswagen-finans" checked>
+                                    <label class="form-check-label" for="volkswagen-finans">VOLKSWAGEN DOĞUŞ FİNANS</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="koc-finans" checked>
+                                    <label class="form-check-label" for="koc-finans">KOÇFİNANS</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="yapi-kredi" checked>
+                                    <label class="form-check-label" for="yapi-kredi">YAPI KREDİ</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="quick-finans" checked>
+                                    <label class="form-check-label" for="quick-finans">QUICK FİNANS</label>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-secondary">Geri</button>
+                                <button type="submit" class="btn btn-primary">İleri</button>
+                            </div>
+                        </form>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tuzelevraklar" aria-expanded="false" aria-controls="tuzelevraklar">
+                         Evraklar
+                        </button>
+                      </h2>
+                      <div id="tuzelevraklar" class="accordion-collapse collapse" data-bs-parent="#tuzelform">
+                        <div class="accordion-body">
+                         
+                          <form>
+                            <div class="mb-3">
+                                <label for="ruhsat" class="form-label">Ruhsat <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="file" class="form-control" id="ruhsat" required>
+                                    <label class="input-group-text" for="ruhsat">dosya yok</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="imza-sirkusu" class="form-label">İmza Sirküsü <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="file" class="form-control" id="imza-sirkusu" required>
+                                    <label class="input-group-text" for="imza-sirkusu">dosya yok</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="faaliyet-belgesi" class="form-label">Faaliyet Belgesi <span class="text-danger">*</span> <small class="form-text text-muted">(güncel hali)</small></label>
+                                <div class="input-group">
+                                    <input type="file" class="form-control" id="faaliyet-belgesi" required>
+                                    <label class="input-group-text" for="faaliyet-belgesi">dosya yok</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="sicil-gazetesi" class="form-label">Sicil Gazetesi <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="file" class="form-control" id="sicil-gazetesi" required>
+                                    <label class="input-group-text" for="sicil-gazetesi">dosya yok</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="kimlikler" class="form-label">Kimlik(ler) <span class="text-danger">*</span> <small class="form-text text-muted">(şirket yetkililerine ait)</small></label>
+                                <div class="input-group">
+                                    <input type="file" class="form-control" id="kimlikler" required>
+                                    <label class="input-group-text" for="kimlikler">dosya yok</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mali-evraklar" class="form-label">Mâli Evraklar <span class="text-danger">*</span> <small class="form-text text-muted">(son 2 yıla ait)</small></label>
+                                <div class="input-group">
+                                    <input type="file" class="form-control" id="mali-evraklar" required>
+                                    <label class="input-group-text" for="mali-evraklar">dosya yok</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="vergi-levhasi" class="form-label">Vargi Levhası <span class="text-danger">*</span> <small class="form-text text-muted"></small></label>
+                                <div class="input-group">
+                                    <input type="file" class="form-control" id="vergi-levhasi" required>
+                                    <label class="input-group-text" for="vergi-levhasi">dosya yok</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="kimlik-on" class="form-label">Ruhsat Sahibi Kimlik Ön Yüz <span class="text-danger">*</span> <small class="form-text text-muted"></small></label>
+                                <div class="input-group">
+                                    <input type="file" class="form-control" id="kimlik-on" required>
+                                    <label class="input-group-text" for="kimlik-on">dosya yok</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="kimlik-arka" class="form-label">Ruhsat Sahibi Kimlik Arka Yüz <span class="text-danger">*</span> <small class="form-text text-muted"></small></label>
+                                <div class="input-group">
+                                    <input type="file" class="form-control" id="kimlik-arka" required>
+                                    <label class="input-group-text" for="kimlik-arka">dosya yok</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="diger" class="form-label">Diğer <small class="form-text text-muted">(Diğer Dosyalar)</small></label>
+                                <div class="input-group">
+                                    <input type="file" class="form-control" id="diger" required>
+                                    <label class="input-group-text" for="diger">dosya yok</label>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-secondary">Geri</button>
+                                <button type="submit" class="btn btn-primary">İleri</button>
+                            </div>
+                        </form>
+                       
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+                  </div>
+
+
+
+
+                  
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    </div>
+
+    <!-- JS Scripts -->
+    
+    <script src="/js/bootstrap.min.js"> </script>
+    <script src="/js/bootstrap.bundle.js"> </script>
+    <script src="/js/bootstrap.js"> </script>
+    <script src="/js/bootstrap.esm.js"> </script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

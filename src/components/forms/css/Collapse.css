@@ -1,0 +1,11 @@
+.collapse-content {
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 0;
+}
+
+
+.react-tel-input .form-control {
+  width: 100% !important;
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+}

@@ -1,0 +1,96 @@
+{
+  "kisiselBilgiler": {
+    "gender": "Erkek",
+    "tcKimlikNo": "23452345",
+    "ad": "wertwer",
+    "soyad": "wert",
+    "maritalStatus": "Evli",
+    "evAdresi": "wert",
+    "cepTelefonu": "3456",
+    "email": "sdfg@sdfsdf",
+    "city": {
+      "value": "03",
+      "label": "Afyonkarahisar"
+    },
+    "district": {
+      "value": "Bayat",
+      "label": "Bayat"
+    }
+  },
+  "calismaBilgiler": {
+    "calismaSekli": "Part-time",
+    "aylikGelir": "35467",
+    "ekGelir": "4567",
+    "ekGelirAciklamasi": "rtyu",
+    "sigortaTuru": "SGK"
+  },
+  "aracBilgileri": {
+    "noterSatisBedeli": "4567",
+    "konsinyeArac": true,
+    "ruhsatSahibiSirket": false,
+    "plaka": "rtyu",
+    "kilometre": "5678",
+    "marka": {
+      "value": "ASTON MARTIN",
+      "label": "ASTON MARTIN"
+    },
+    "aracTipi": {
+      "value": "DB9 VOLANTE TOUCHTRONIC",
+      "label": "DB9 VOLANTE TOUCHTRONIC"
+    },
+    "year": {
+      "value": 2011,
+      "label": "2011"
+    },
+    "kaskoKodu": "81001",
+    "kaskoDegeri": 0
+  },
+  "krediBilgileri": {
+    "krediTutari": "5678",
+    "krediVadesi": "24",
+    "selectedBanks": [
+      "TÜRKİYE FİNANS KATILIM",
+      "AKBANK"
+    ]
+  },
+  "eklenenKefil": [
+    {
+      "gender": "Erkek",
+      "tcKimlikNo": "5678",
+      "ad": "tyuı",
+      "soyad": "tyuı",
+      "maritalStatus": "Evli",
+      "evAdresi": "tyuı",
+      "cepTelefonu": "6789",
+      "email": "tyuı@dfg",
+      "sehir": {
+        "value": "02",
+        "label": "Adıyaman"
+      },
+      "semt": {
+        "value": "Çelikhan",
+        "label": "Çelikhan"
+      }
+    },
+    {
+      "gender": "Erkek",
+      "tcKimlikNo": "4567",
+      "ad": "rtyu",
+      "soyad": "rtyu",
+      "maritalStatus": "Evli",
+      "evAdresi": "rtyu",
+      "cepTelefonu": "5678",
+      "email": "ytuı",
+      "sehir": {
+        "value": "02",
+        "label": "Adıyaman"
+      },
+      "semt": {
+        "value": "Çelikhan",
+        "label": "Çelikhan"
+      }
+    }
+  ]
+}
+
+

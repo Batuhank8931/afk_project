@@ -1,0 +1,70 @@
+I want you to write a SQL code to create 3 tables;
+
+"Bireysel" table
+
+columns are; 
+
+id   AUTO_INCREMENT   
+tarih  DATE   -the date of creation- 
+Cinsiyet  varchar(225) : "gender"
+tcKimlikNo  varchar(225) : "tcKimlikNo"
+ad   varchar(225) : "ad"
+soyad   varchar(225) : "soyad"
+medenihal   varchar(225) : "maritalStatus"
+evAdresi  varchar(225) : "evAdresi"
+cepTelefonu  varchar(225) : "cepTelefonu"
+email  varchar(225) : "email"
+il  varchar(225) : ("sehir":"label")
+ilce  varchar(225) : ("semt":"label")
+calismaSekli  varchar(225) : "calismaSekli"
+aylikGelir varchar(225) : "aylikGelir"
+ekGelir  varchar(225) : "ekGelir"
+ekGelirAciklamasi  varchar(225) : "ekGelirAciklamasi"
+sigortaTuru  varchar(225) : "sigortaTuru"
+noterSatisBedeli  varchar(225) : "noterSatisBedeli"
+konsinyeArac  varchar(225) : ("konsinyeArac" if true "evet" if false "hayır")
+ruhsatSahibiSirket  varchar(225) : ("ruhsatSahibiSirket" if true "evet" if false "hayır")
+plaka  varchar(225) : "plaka"
+kilometre  varchar(225) : "kilometre"
+marka  varchar(225) : ("marka":"label")
+aracTipi  varchar(225) : ("aracTipi":"label")
+yıl  varchar(225) :  ("year":"label")
+kaskoKodu  varchar(225) : "kaskoKodu"
+kaskoDegeri  varchar(225) : "kaskoDegeri"
+krediTutari  varchar(225) : "krediTutari"
+krediVadesi  varchar(225) : "krediVadesi"
+selectedBanks  varchar(225) : "selectedBanks"
+eklenenKefil  varchar(225) :  "eklenenKefil"
+
+
+"Tuzel" table
+
+columns are; 
+
+id   AUTO_INCREMENT
+tarih  DATE  -the date of creation- 
+vergiNo  varchar(225)   : "vergiNo"
+SirketUnvani  varchar(225) : "SirketUnvani"
+FaaliyetKonusu  varchar(225) : "FaaliyetKonusu"
+isadresi  varchar(225) : "evAdresi"
+telefon_firma  varchar(225) : "telefon_firma"
+email_firma  varchar(225) : "email_firma"
+il  varchar(225) : ("sehir":"label")
+ilce  varchar(225) : ("semt":"label")
+noterSatisBedeli  varchar(225) : "noterSatisBedeli"
+konsinyeArac  varchar(225) : ("konsinyeArac" if true "evet" if false "hayır")
+ruhsatSahibiSirket  varchar(225) : ("ruhsatSahibiSirket" if true "evet" if false "hayır")
+plaka  varchar(225) : "plaka"
+kilometre  varchar(225) : "kilometre"
+marka  varchar(225) : ("marka":"label")
+aracTipi  varchar(225) : ("aracTipi":"label")
+yıl  varchar(225) :  ("year":"label")
+kaskoKodu  varchar(225) : "kaskoKodu"
+kaskoDegeri  varchar(225) : "kaskoDegeri"
+krediTutari  varchar(225) : "krediTutari"
+krediVadesi  varchar(225) : "krediVadesi"
+selectedBanks  varchar(225) : "selectedBanks"
+
+
+
+

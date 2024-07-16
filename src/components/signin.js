@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./css/login.css";
 import reklam from "./reklam.jpeg";
-
 import afk from "./afk.png";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 const SignUp = () => {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const [message, setMessage] = useState('');
@@ -56,8 +56,6 @@ const SignUp = () => {
     }
   };
   
-  
-
   return (
     <div className="container">
       <div className="row justify-content-center">
@@ -113,13 +111,11 @@ const SignUp = () => {
                         />
                       </div>
                       <div className="form-group">
-                        <input
-                          type="tel"
-                          className="form-control form-control-user"
-                          id="SignUpInputPhone"
-                          placeholder="Telefon Numaranızı Giriniz..."
+                        <PhoneInput
+                          country={'tr'}
                           value={phone}
-                          onChange={(e) => setPhone(e.target.value)}
+                          onChange={(phone) => setPhone(phone)}
+                          inputClass="form-control form-control-user px-5"
                         />
                       </div>
                       <button

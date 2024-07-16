@@ -199,22 +199,14 @@ const Basvuru = () => {
     }
   };
 
-  const handlePostData = (formData) => {
-    fetch("https://direct.afkmotorsfinans.com/post_data.php", {
+  const sendmail = (formData) => {
+    fetch("https://direct.afkmotorsfinans.com/yeni_basvuru.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        alert("Başvurunuz başarıyla gönderildi.");
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("Başvurunuz gönderilirken bir hata oluştu.");
-      });
   };
 
   const handleSaveToJson_bireysel = () => {
@@ -239,6 +231,7 @@ const Basvuru = () => {
     handleFileUploadAndPostData(bireyselFiles, formData);
     const formDataObj = new FormData();
     formDataObj.append("username", username);
+    sendmail(formData); // Call sendmail function here
   };
 
   const handleSaveToJson_tuzel = () => {
@@ -263,6 +256,7 @@ const Basvuru = () => {
     handleFileUploadAndPostData(all_tuzel_files, formData);
     const formDataObj = new FormData();
     formDataObj.append("username", username);
+    sendmail(formData); // Call sendmail function here
   };
 
   return (

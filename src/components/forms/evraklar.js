@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./css/Collapse.css";
 
 const Evraklar = ({
@@ -13,6 +13,9 @@ const Evraklar = ({
   };
 
   const contentRef = useRef(null);
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
 
   const validateForm = () => {
     const requiredFields = [
@@ -38,21 +41,24 @@ const Evraklar = ({
 
   return (
     <div className="container mt-3">
-  
+
       <button
         onClick={toggleCollapse}
-        className={`btn btn-block text-left d-flex column justify-content-between ${
-          isCollapsed ? "btn-outline-primary" : "btn-primary"
-        }`}
+        className={`btn btn-block text-left d-flex column justify-content-between ${isCollapsed ? "btn-outline-primary" : "btn-primary"
+          }`}
       >
         <div>Evraklar</div>
-        <div>{isCollapsed ? "▲" : "▼"}</div>
+        <div className="d-flex align-items-center">
+          {isSubmitted && (
+            <span className="text-success mr-2" style={{ fontSize: '1rem', border: 'none' }}>&#x2714;</span>
+          )}
+          <div>{isCollapsed ? "▲" : "▼"}</div>
+        </div>
       </button>
       <div
         ref={contentRef}
-        className={`card mt-3 collapse-content ${
-          isCollapsed ? "collapsed" : "expanded"
-        }`}
+        className={`card mt-3 collapse-content ${isCollapsed ? "collapsed" : "expanded"
+          }`}
         style={{
           maxHeight: isCollapsed ? "0" : `${contentRef.current.scrollHeight}px`,
         }}

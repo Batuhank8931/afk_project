@@ -54,6 +54,9 @@ const Eklenen_kefil = ({
   const [selectedisDistrict, setSelectedisDistrict] = useState(null);
   const [isCollapsed, setIsCollapsed] = useState(initialCollapsed);
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+
   const [phone, setPhone] = useState("");
   const [altPhone, setAltPhone] = useState("");
   const [isphone, setisPhone] = useState("");
@@ -240,18 +243,16 @@ const Eklenen_kefil = ({
     <div className="container mt-3 mb-3">
       <button
         onClick={toggleCollapse}
-        className={`btn btn-block text-left d-flex column justify-content-between ${
-          isCollapsed ? "btn-outline-primary" : "btn-primary"
-        }`}
+        className={`btn btn-block text-left d-flex column justify-content-between ${isCollapsed ? "btn-outline-primary" : "btn-primary"
+          }`}
       >
         <div>Eklenen Kefil - {index}</div>
         <div>{isCollapsed ? "▼" : "▲"}</div>
       </button>
       <div
         ref={contentRef}
-        className={`card mt-3 collapse-content ${
-          isCollapsed ? "collapsed" : "expanded"
-        }`}
+        className={`card mt-3 collapse-content ${isCollapsed ? "collapsed" : "expanded"
+          }`}
         style={{
           maxHeight: hasMounted
             ? isCollapsed

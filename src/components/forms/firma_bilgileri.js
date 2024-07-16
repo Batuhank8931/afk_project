@@ -60,6 +60,9 @@ const Firma_bilgiler = ({
   const contentRef = useRef(null);
   const [hasMounted, setHasMounted] = useState(false);
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+
   useEffect(() => {
     // Fetch cities on component mount
     const fetchCities = async () => {
@@ -133,6 +136,9 @@ const Firma_bilgiler = ({
     event.preventDefault();
     if (validateForm()) {
       getFormData({ ...formData, sehir: selectedCity, semt: selectedDistrict });
+      setIsSubmitted(true);
+
+      // I want to add a big "✔" at right border of the "Kişisel Bilgiler" toggle button  !!!!!!!!!!!!
       toggleCollapse();
       uncollapseNext();
     }
@@ -154,26 +160,29 @@ const Firma_bilgiler = ({
     <div className="container mt-3">
       <button
         onClick={toggleCollapse}
-        className={`btn btn-block text-left d-flex column justify-content-between ${
-          isCollapsed ? "btn-outline-primary" : "btn-primary"
-        }`}
+        className={`btn btn-block text-left d-flex column justify-content-between ${isCollapsed ? "btn-outline-primary" : "btn-primary"
+          }`}
       >
         <div>Firma Bilgileri</div>
-        <div>{isCollapsed ? "▲" : "▼"}</div>
+        <div className="d-flex align-items-center">
+          {isSubmitted && (
+            <span className="text-success mr-2" style={{ fontSize: '1rem', border: 'none' }}>&#x2714;</span>
+          )}
+          <div>{isCollapsed ? "▲" : "▼"}</div>
+        </div>
       </button>
       <div
         ref={contentRef}
-        className={`card mt-3 collapse-content ${
-          isCollapsed ? "collapsed" : "expanded"
-        }`}
+        className={`card mt-3 collapse-content ${isCollapsed ? "collapsed" : "expanded"
+          }`}
         style={{
           maxHeight: hasMounted
             ? isCollapsed
               ? "0"
               : `${contentRef.current.scrollHeight}px`
             : isCollapsed
-            ? "0"
-            : "auto",
+              ? "0"
+              : "auto",
         }}
       >
         <div className="card-body">

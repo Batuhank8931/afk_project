@@ -55,6 +55,9 @@ const Kisisel_bilgiler = ({
 
   const [hasMounted, setHasMounted] = useState(false);
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+
   const [formData, setFormData] = useState({
     gender: "",
     dogumTarihi: "",
@@ -64,7 +67,7 @@ const Kisisel_bilgiler = ({
     maritalStatus: "",
     evAdresi: "",
     cepTelefonu: "",
-    acepTelefonu:"",
+    acepTelefonu: "",
     email: "",
   });
 
@@ -149,7 +152,10 @@ const Kisisel_bilgiler = ({
         district: selectedDistrict,
       });
 
-      // Collapse the current section and uncollapse the next one
+      // I want to add a big "✔" at right border of the "Kişisel Bilgiler" toggle button  !!!!!!!!!!!!
+      setIsSubmitted(true);
+
+      // I want to add a big "✔" at right border of the "Kişisel Bilgiler" toggle button  !!!!!!!!!!!!
       toggleCollapse();
       uncollapseNext();
     }
@@ -171,18 +177,22 @@ const Kisisel_bilgiler = ({
     <div className="container mt-2">
       <button
         onClick={toggleCollapse}
-        className={`btn btn-block text-left d-flex column justify-content-between ${
-          isCollapsed ? "btn-outline-primary" : "btn-primary"
-        }`}
+        className={`btn btn-block text-left d-flex justify-content-between align-items-center ${isCollapsed ? "btn-outline-primary" : "btn-primary"
+          }`}
       >
         <div>Kişisel Bilgiler</div>
-        <div>{isCollapsed ? "▲" : "▼"}</div>
+        <div className="d-flex align-items-center">
+          {isSubmitted && (
+            <span className="text-success mr-2" style={{ fontSize: '1rem', border: 'none' }}>&#x2714;</span>
+          )}
+          <div>{isCollapsed ? "▲" : "▼"}</div>
+        </div>
       </button>
+
       <div
         ref={contentRef}
-        className={`card mt-3 collapse-content ${
-          isCollapsed ? "collapsed" : "expanded"
-        }`}
+        className={`card mt-3 collapse-content ${isCollapsed ? "collapsed" : "expanded"
+          }`}
         style={{
           maxHeight: hasMounted
             ? isCollapsed

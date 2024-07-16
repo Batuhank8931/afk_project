@@ -1,9 +1,12 @@
-import React, { useState, useMemo  } from "react";
+import React, { useState, useMemo } from "react";
 import Popup from "./popup"; // Adjust the path as needed
 import "./css/basvuru.css";
 import { saveAs } from "file-saver";
 import { useAuth } from "./AuthContext";
 import axios from "axios";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import NavBar from "./navbar";
 import Kisisel_bilgiler from "./forms/kisisel_bilgiler";
@@ -37,6 +40,11 @@ const Basvuru = () => {
   const [yetkiliBilgilerData, setYetkiliBilgilerData] = useState(null);
   const [aracbilgilerituzelData, setAracBilgileriTuzelData] = useState(null);
   const [kredibilgilerituzelData, setKrediBilgileriTuzelData] = useState(null);
+
+
+  const [isSubmittingBireysel, setIsSubmittingBireysel] = useState(false);
+  const [isSubmittingTuzel, setIsSubmittingTuzel] = useState(false);
+
 
   const [activeTab, setActiveTab] = useState("bilgiler"); // Default to 'bilgiler' tab
 
@@ -193,7 +201,7 @@ const Basvuru = () => {
           },
         }
       );
-      alert("Data and files uploaded successfully");
+      toast.success('Başvurunuz Başarıyla Gönderildi');
     } catch (error) {
       console.error("Error uploading data and files:", error);
     }
@@ -209,16 +217,18 @@ const Basvuru = () => {
     })
   };
 
-  const handleSaveToJson_bireysel = () => {
+  const handleSaveToJson_bireysel = async () => {
     if (
       !kisiselBilgilerData ||
       !calismaBilgilerData ||
       !aracbilgileriData ||
       !kredibilgileriData
     ) {
-      alert("Formu Tamamlayınız");
+      toast.error("Formu Tamamlayınız");
       return;
     }
+
+    setIsSubmittingBireysel(true); // Add this line
 
     const formData = {
       type: "bireysel",
@@ -228,22 +238,30 @@ const Basvuru = () => {
       krediBilgileri: kredibilgileriData,
       eklenenKefil: eklenenKefilData,
     };
-    handleFileUploadAndPostData(bireyselFiles, formData);
-    const formDataObj = new FormData();
-    formDataObj.append("username", username);
-    sendmail(formData); // Call sendmail function here
+
+    try {
+      await handleFileUploadAndPostData(bireyselFiles, formData);
+      const formDataObj = new FormData();
+      formDataObj.append("username", username);
+      sendmail(formData); // Call sendmail function here
+    } finally {
+      setIsSubmittingBireysel(false); // Add this line
+    }
   };
 
-  const handleSaveToJson_tuzel = () => {
+
+  const handleSaveToJson_tuzel = async () => {
     if (
       !firmaBilgilerData ||
       !yetkiliBilgilerData ||
       !aracbilgilerituzelData ||
       !kredibilgilerituzelData
     ) {
-      alert("Formu Tamamlayınız");
+      toast.error("Formu Tamamlayınız");
       return;
     }
+
+    setIsSubmittingTuzel(true); // Add this line
 
     const formData = {
       type: "tuzel",
@@ -253,14 +271,20 @@ const Basvuru = () => {
       krediBilgileriTuzel: kredibilgilerituzelData,
     };
 
-    handleFileUploadAndPostData(all_tuzel_files, formData);
-    const formDataObj = new FormData();
-    formDataObj.append("username", username);
-    sendmail(formData); // Call sendmail function here
+    try {
+      await handleFileUploadAndPostData(all_tuzel_files, formData);
+      const formDataObj = new FormData();
+      formDataObj.append("username", username);
+      sendmail(formData); // Call sendmail function here
+    } finally {
+      setIsSubmittingTuzel(false); // Add this line
+    }
   };
+
 
   return (
     <div>
+      <ToastContainer />
       <Popup
         show={isPopupVisible}
         handleClose={closePopup}
@@ -280,9 +304,8 @@ const Basvuru = () => {
                 >
                   <li className="nav-item">
                     <a
-                      className={`nav-link ${
-                        activeTab === "bilgiler" ? "active" : ""
-                      }`}
+                      className={`nav-link ${activeTab === "bilgiler" ? "active" : ""
+                        }`}
                       id="bilgiler-tab"
                       data-bs-toggle="tab"
                       href="#bilgiler"
@@ -296,9 +319,8 @@ const Basvuru = () => {
                   </li>
                   <li className="nav-item">
                     <a
-                      className={`nav-link ${
-                        activeTab === "tuzelform" ? "active" : ""
-                      }`}
+                      className={`nav-link ${activeTab === "tuzelform" ? "active" : ""
+                        }`}
                       id="tuzelForm-tab"
                       data-bs-toggle="tab"
                       href="#tuzelform"
@@ -395,8 +417,9 @@ const Basvuru = () => {
                       <button
                         onClick={handleSaveToJson_bireysel}
                         className="btn btn-success"
+                        disabled={isSubmittingBireysel} // Add this line
                       >
-                        Başvur
+                        {isSubmittingBireysel ? 'Gönderiliyor...' : 'Başvur'} 
                       </button>
                     </div>
                   </div>
@@ -435,7 +458,7 @@ const Basvuru = () => {
                         files={yetkiliFiles} // Add this line
                         setFiles={setYetkiliFiles} // Add this line
                         handleFileUpload={() => handleFileUpload(yetkiliFiles)} // Add this line
-                        
+
                       />
                       <Arac_bilgileri_tuzel
                         isCollapsed={isAracBilgileriTuzelCollapsed}
@@ -475,8 +498,9 @@ const Basvuru = () => {
                       <button
                         onClick={handleSaveToJson_tuzel}
                         className="btn btn-success"
+                        disabled={isSubmittingTuzel} // Add this line
                       >
-                        Başvur
+                        {isSubmittingTuzel ? 'Gönderiliyor...' : 'Başvur'}
                       </button>
                     </div>
                   </div>

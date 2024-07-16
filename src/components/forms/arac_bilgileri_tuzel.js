@@ -88,6 +88,9 @@ const Arac_bilgileri = ({
     ilanNumarasi: "",
   });
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+
   const contentRef = useRef(null);
 
   const handleMarkaChange = (selectedOption) => {
@@ -162,6 +165,9 @@ const Arac_bilgileri = ({
         kaskoDegeri:
           selectedCar && selectedYear ? selectedCar[selectedYear.value] : null,
       });
+      setIsSubmitted(true);
+
+      // I want to add a big "✔" at right border of the "Kişisel Bilgiler" toggle button  !!!!!!!!!!!!
       toggleCollapse();
       uncollapseNext();
     }
@@ -185,18 +191,21 @@ const Arac_bilgileri = ({
     <div className="container mt-3">
       <button
         onClick={toggleCollapse}
-        className={`btn btn-block text-left d-flex column justify-content-between ${
-          isCollapsed ? "btn-outline-primary" : "btn-primary"
-        }`}
+        className={`btn btn-block text-left d-flex column justify-content-between ${isCollapsed ? "btn-outline-primary" : "btn-primary"
+          }`}
       >
         <div>Araç Bilgileri</div>
-        <div>{isCollapsed ? "▲" : "▼"}</div>
+        <div className="d-flex align-items-center">
+          {isSubmitted && (
+            <span className="text-success mr-2" style={{ fontSize: '1rem', border: 'none' }}>&#x2714;</span>
+          )}
+          <div>{isCollapsed ? "▲" : "▼"}</div>
+        </div>
       </button>
       <div
         ref={contentRef}
-        className={`card mt-3 collapse-content ${
-          isCollapsed ? "collapsed" : "expanded"
-        }`}
+        className={`card mt-3 collapse-content ${isCollapsed ? "collapsed" : "expanded"
+          }`}
         style={{
           maxHeight: isCollapsed ? "0" : `${contentRef.current.scrollHeight}px`,
         }}

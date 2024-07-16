@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./css/login.css";
-
 import reklam from "./reklam.jpeg";
 import afk from "./afk.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ForgetPassword = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsSubmitting(true);
 
     if (email) {
       try {
@@ -26,8 +29,10 @@ const ForgetPassword = () => {
         const user = users.find(user => user.email === email);
 
         if (!user) {
-          setError("Böyle bir kullanıcı yok.");
+          toast.error("Böyle bir kullanıcı yok.");
+          setError("");
           setSuccess("");
+          setIsSubmitting(false);
           return;
         }
 
@@ -48,27 +53,35 @@ const ForgetPassword = () => {
         }
 
         if (user.sifre === "") {
-          setError("Üyeliğiniz onay aşamasında");
+          toast.error("Üyeliğiniz onay aşamasında");
+          setError("");
           setSuccess("");
         } else {
-          setSuccess("Şifre sıfırlama talebi başarıyla gönderildi.");
+          toast.success("Şifre sıfırlama talebi başarıyla gönderildi.");
           setError("");
+          setSuccess("");
         }
 
         setEmail("");
       } catch (error) {
         console.error('Error posting data:', error);
-        setError('Bir hata oluştu, lütfen tekrar deneyin.');
+        toast.error('Bir hata oluştu, lütfen tekrar deneyin.');
+        setError("");
         setSuccess("");
+      } finally {
+        setIsSubmitting(false);
       }
     } else {
-      setError("Lütfen email adresinizi giriniz.");
+      toast.error("Lütfen email adresinizi giriniz.");
+      setError("");
       setSuccess("");
+      setIsSubmitting(false);
     }
   };
 
   return (
     <div className="container">
+      <ToastContainer />
       <div className="row justify-content-center">
         <div className="p-3 d-flex justify-content-center">
           <img src={afk} alt="afk" className="afk" />
@@ -109,8 +122,9 @@ const ForgetPassword = () => {
                       <button
                         type="submit"
                         className="btn btn-primary btn-user btn-block"
+                        disabled={isSubmitting}
                       >
-                        Şifreyi Sıfırlama Talebi Gönder
+                        {isSubmitting ? 'Gönderiliyor...' : 'Şifreyi Sıfırlama Talebi Gönder'}
                       </button>
                     </form>
                     <hr />

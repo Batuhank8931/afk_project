@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./css/login.css";
 import { useAuth } from "./AuthContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import reklam from "./reklam.jpeg";
 
@@ -22,12 +24,14 @@ const Login = () => {
       // Redirect to the Basvuru page on successful login
       navigate("/basvuru");
     } else {
-      setError("Invalid email or password");
+      toast.error("Kulancı ve şifre yanlış ya da eksik");
+      setError("Kulancı ve şifre yanlış ya da eksik");
     }
   };
 
   return (
     <div className="container">
+      <ToastContainer />
       <div className="row justify-content-center d-flex">
         <div className="p-3 d-flex justify-content-center">
           <img src={afk} alt="afk" className="afk" />
